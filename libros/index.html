@@ -17,12 +17,48 @@
                         <img src="../Media/Utilex_logo.png" alt="Utilex - Inicio" width="74" height="85">
                     </a> 
                 </div>
-                <ul class="lista-nav">
-                    <li class="nav-links"><a href="../pagina-principal/index.html">Inicio</a></li>
-                    <li class="nav-links"><a href="./index.html" class="active">Libros</a></li>
-                    <li class="nav-links"><a href="../utiles-escolares/index.html">Útiles Escolares</a></li>
-                    <li class="nav-links"><a href="../ofertas/index.html">Ofertas</a></li>
-                </ul>
+                <div class="nav-menu-wrapper">
+                    <ul class="lista-nav">
+                        <li class="nav-links"><a href="../pagina-principal/index.html">Inicio</a></li>
+                        <li class="nav-links"><a href="./index.html" class="active">Libros</a></li>
+                        <li class="nav-links"><a href="../utiles-escolares/index.html">Útiles Escolares</a></li>
+                        <li class="nav-links"><a href="../ofertas/index.html">Ofertas</a></li>
+                    </ul>
+                    <div class="cart-container">
+                        <button type="button" class="btn-cart-toggle" id="btnCartToggle" aria-label="Ver carrito de compras" title="Carrito de compras">
+                            <span class="cart-icon">🛒</span>
+                            <span class="cart-badge" id="cartCount" style="display: none;">0</span>
+                        </button>
+                        <div class="cart-dropdown" id="cartDropdown">
+                            <div class="cart-banner-msg" id="cartBannerMsg" style="display: none;">
+                                <span>✓</span> <span id="cartBannerText">Producto agregado</span>
+                            </div>
+                            <div class="cart-dropdown-header">
+                                <div class="cart-items-count">
+                                    <span>Items: <strong id="cartHeaderCount">0</strong></span>
+                                </div>
+                                <button type="button" class="btn-clear-cart" id="btnClearCart" title="Vaciar carrito" style="display: none;">
+                                    🗑️ Borrar todos
+                                </button>
+                                <button type="button" class="btn-close-cart" id="btnCloseCart" title="Cerrar">✕</button>
+                            </div>
+                            <div class="cart-items-list" id="cartItemsList">
+                                <!-- Productos dinámicos -->
+                            </div>
+                            <div class="cart-dropdown-footer" id="cartDropdownFooter" style="display: none;">
+                                <div class="cart-subtotal-row">
+                                    <span class="subtotal-label">Subtotal</span>
+                                    <span class="subtotal-amount" id="cartSubtotal">S/ 0,00</span>
+                                </div>
+                                <p class="cart-tax-notice">Los descuentos se aplicarán en el carrito</p>
+                                <div class="cart-action-buttons">
+                                    <button type="button" class="btn-cart-secondary" id="btnKeepShopping">Seguir Comprando</button>
+                                    <button type="button" class="btn-cart-primary" id="btnCheckout">Finalizar Compra</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
@@ -41,7 +77,6 @@
             <div class="grid-productos">
 
                 <!-- Libro 1 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/fantasia/el_señor_de_los_anillos.png" alt="El Señor de los Anillos" class="producto-img">
@@ -54,10 +89,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>El Señor de los Anillos</h4>
+                        </div>
+                        <p class="popover-desc">La legendaria odisea de Frodo Bolsón para destruir el Anillo Único en el Monte del Destino y salvar la Tierra Media de las sombras del Señor Oscuro Sauron.</p>
+                    </div>
                 </article>
 
                 <!-- Libro 2 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/fantasia/la_metamorfosis.jpg" alt="La Metamorfosis" class="producto-img">
@@ -70,10 +111,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>La Metamorfosis</h4>
+                        </div>
+                        <p class="popover-desc">Gregorio Samsa despierta una mañana transformado en un monstruoso insecto, desencadenando una profunda reflexión sobre el aislamiento, la familia y la condición humana.</p>
+                    </div>
                 </article>
 
                 <!-- Libro 3 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/fantasia/dulce_maldad.jpg" alt="Dulce Maldad" class="producto-img">
@@ -86,10 +133,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Dulce Maldad</h4>
+                        </div>
+                        <p class="popover-desc">Una intensa novela de romance oscuro y secretos del pasado donde la atracción y el peligro se entrelazan en un juego lleno de misterio y pasión.</p>
+                    </div>
                 </article>
 
                 <!-- Libro 4 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/fantasia/las cronicas de narnia.jpg" alt="Las crónicas de Narnia" class="producto-img">
@@ -102,10 +155,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Las crónicas de Narnia</h4>
+                        </div>
+                        <p class="popover-desc">Cuatro hermanos atraviesan un ropero mágico hacia Narnia, un mundo fantástico donde lucharán junto al león Aslan para liberar el reino de la Bruja Blanca.</p>
+                    </div>
                 </article>
 
                 <!-- Libro 5 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/fantasia//mitos_y_leyendas.jpg" alt="Mitos y Leyendas" class="producto-img">
@@ -118,10 +177,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Mitos y Leyendas</h4>
+                        </div>
+                        <p class="popover-desc">Una fascinante recopilación de relatos mágicos, tradiciones orales y mitología ancestral que enriquecen nuestro imaginario y memoria colectiva.</p>
+                    </div>
                 </article>
 
                 <!-- Libro 6 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/fantasia/cronica-de-una-muerte-anunciada.jpg" alt="Crónica de una muerte anunciada" class="producto-img">
@@ -134,10 +199,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Crónica de una muerte anunciada</h4>
+                        </div>
+                        <p class="popover-desc">Magistral reconstrucción periodística y literaria del asesinato de Santiago Nasar en un pueblo caribeño donde todos conocían la tragedia de antemano.</p>
+                    </div>
                 </article>
 
                 <!-- Libro 7 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/fantasia/trono_de_cristal.jpg" alt="Trono de Cristal" class="producto-img">
@@ -150,10 +221,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Trono de Cristal</h4>
+                        </div>
+                        <p class="popover-desc">Celaena Sardothien, una letal asesina, compite en un torneo mortal en el castillo de cristal para ganar su libertad mientras descubre oscuros misterios en el reino.</p>
+                    </div>
                 </article>
 
                 <!-- Libro 8 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/fantasia/la caida del principe de fuego.jpg" alt="La caída del príncipe de fuego" class="producto-img">
@@ -165,6 +242,13 @@
                             <div class="producto-precio">S/. 170.00</div>
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
+                    </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>La caída del príncipe de fuego</h4>
+                        </div>
+                        <p class="popover-desc">La emocionante culminación de una historia de magia elemental, intrigas políticas y amores prohibidos donde el destino de un imperio pende de un hilo.</p>
                     </div>
                 </article>
             </div>
@@ -182,7 +266,6 @@
             <div class="grid-productos">
 
                 <!-- Libro 1 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/aventura/el_viejo_y_el_mar.jpg" alt="El viejo y el mar" class="producto-img">
@@ -195,10 +278,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>El viejo y el mar</h4>
+                        </div>
+                        <p class="popover-desc">La conmovedora historia del anciano pescador Santiago y su épica y solitaria batalla en alta mar contra un pez gigante, demostrando la perseverancia humana.</p>
+                    </div>
                 </article>
 
                 <!-- Libro 2 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/aventura/la_isla_del_tesoro.jpg" alt="La Isla del Tesoro" class="producto-img">
@@ -211,10 +300,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>La Isla del Tesoro</h4>
+                        </div>
+                        <p class="popover-desc">El joven Jim Hawkins halla el mapa de un tesoro y zarpa en una expedición llena de motines, peligros y el legendario pirata Long John Silver.</p>
+                    </div>
                 </article>
 
                 <!-- Libro 3 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/aventura/la_llamada_de_la_selva.jpg" alt="La Llamada de la Selva" class="producto-img">
@@ -227,10 +322,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>La Llamada de la Selva</h4>
+                        </div>
+                        <p class="popover-desc">Buck, un perro de hogar, es llevado al gélido Yukón durante la fiebre del oro y debe redescubrir su naturaleza salvaje para sobrevivir.</p>
+                    </div>
                 </article>
 
                 <!-- Libro 4 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/aventura/moby_dick.jpg" alt="Moby Dick" class="producto-img">
@@ -243,10 +344,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Moby Dick</h4>
+                        </div>
+                        <p class="popover-desc">La obsesiva travesía del capitán Ahab a bordo del barco ballenero Pequod en busca de la temible ballena blanca que marcó su destino.</p>
+                    </div>
                 </article>
 
                 <!-- Libro 5 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/aventura/robinson_crusoe.jpg" alt="Robinson Crusoe" class="producto-img">
@@ -259,10 +366,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Robinson Crusoe</h4>
+                        </div>
+                        <p class="popover-desc">La apasionante odisea de un marinero que sobrevive a un naufragio y pasa décadas aprendiendo a dominar una isla desierta y solitaria.</p>
+                    </div>
                 </article>
 
                 <!-- Libro 6 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/aventura/veinte_mil_leguas_de_viaje_submarino.jpg" alt="Veinte mil leguas de viaje submarino" class="producto-img">
@@ -275,10 +388,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Veinte mil leguas de viaje submarino</h4>
+                        </div>
+                        <p class="popover-desc">El profesor Aronnax recorre los fondos oceánicos más asombrosos del planeta a bordo del submarino Nautilus del enigmático Capitán Nemo.</p>
+                    </div>
                 </article>
 
                 <!-- Libro 7 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/aventura/viaje_al_centro_de_la_tierra.jpg" alt="Viaje al centro de la tierra" class="producto-img">
@@ -291,10 +410,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Viaje al centro de la tierra</h4>
+                        </div>
+                        <p class="popover-desc">Una expedición científica desciende por las entrañas de un volcán extinto hacia un mundo subterráneo lleno de maravillas prehistóricas.</p>
+                    </div>
                 </article>
 
                 <!-- Libro 8 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/aventura/vuelta_al_mundo_en_80_dias.jpg" alt="La vuelta al mundo en 80 días" class="producto-img">
@@ -306,6 +431,13 @@
                             <div class="producto-precio">S/. 50.00</div>
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
+                    </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>La vuelta al mundo en 80 días</h4>
+                        </div>
+                        <p class="popover-desc">Phileas Fogg y su criado Picaporte viajan a contrarreloj a través de continentes y mares para ganar una increíble apuesta en Londres.</p>
                     </div>
                 </article>
             </div>
@@ -323,7 +455,6 @@
             <div class="grid-productos">
 
                 <!-- Manga 1 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/manga/PKespecial.jpg" alt="Manga 1" class="producto-img">
@@ -336,10 +467,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Pocket Monsters Special: Scarlet Violet</h4>
+                        </div>
+                        <p class="popover-desc">Nuevas aventuras y batallas en la región de Paldea mientras los jóvenes entrenadores exploran la Academia y descubren el poder Teracristal.</p>
+                    </div>
                 </article>
 
                 <!-- Manga 2 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/manga/BocchiTheRock.jpg" alt="Manga 2" class="producto-img">
@@ -352,10 +489,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Bocchi the Rock! Vol. 1</h4>
+                        </div>
+                        <p class="popover-desc">Hitori Gotō es una guitarrista tímida con ansiedad social que encuentra su lugar y supera sus miedos tras integrarse a Kessoku Band.</p>
+                    </div>
                 </article>
 
                 <!-- Manga 3 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/manga/ChainMan.png" alt="Manga 3" class="producto-img">
@@ -368,10 +511,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Chainsaw Man Vol. 1</h4>
+                        </div>
+                        <p class="popover-desc">Denji renace como el brutal híbrido Chainsaw Man tras un pacto con su demonio Pochita, iniciando una sangrienta labor como cazador de demonios.</p>
+                    </div>
                 </article>
 
                 <!-- Manga 4 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/manga/Frieren.jpg" alt="Manga 4" class="producto-img">
@@ -384,10 +533,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Frieren Vol. 1</h4>
+                        </div>
+                        <p class="popover-desc">Tras derrotar al Rey Demonio, la elfa inmortal Frieren emprende un viaje para comprender las efímeras emociones y vínculos humanos.</p>
+                    </div>
                 </article>
 
                 <!-- Manga 5 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/manga/TragonesYMazmorras.png" alt="Manga 5" class="producto-img">
@@ -400,10 +555,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Tragones y Mazmorras Vol. 1</h4>
+                        </div>
+                        <p class="popover-desc">Para rescatar a su compañera sin provisiones, un grupo de aventureros decide cocinar y alimentarse de los monstruos que habitan la mazmorra.</p>
+                    </div>
                 </article>
 
                 <!-- Manga 6 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/manga/kimetsu.jpg" alt="Manga 6" class="producto-img">
@@ -416,10 +577,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Kimetsu no Yaiba Vol. 1</h4>
+                        </div>
+                        <p class="popover-desc">Tanjiro Kamado empuña su espada contra los demonios para vengar a su familia y hallar la cura que devuelva la humanidad a su hermana Nezuko.</p>
+                    </div>
                 </article>
 
                 <!-- Manga 7 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/manga/InLove.jpg" alt="Manga 7" class="producto-img">
@@ -432,10 +599,16 @@
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
                     </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Me enamoré de la villana Vol. 1</h4>
+                        </div>
+                        <p class="popover-desc">Reencarnada en su juego otome preferido, Rei decide ignorar a los príncipes y dedicar todo su afecto y devoción a la altanera villana.</p>
+                    </div>
                 </article>
 
                 <!-- Manga 8 -->
-
                 <article class="producto-card">
                     <div class="producto-img-container">
                         <img src="../Media/libros/manga/BocchiTheRockEight.png" alt="Manga 8" class="producto-img">
@@ -447,6 +620,13 @@
                             <div class="producto-precio">S/. 59.90</div>
                             <button class="btn btn-card" title="Agregar al carrito">Añadir 🛒</button>
                         </div>
+                    </div>
+                    <div class="producto-popover">
+                        <div class="popover-header">
+                            <span class="popover-badge">Sinopsis</span>
+                            <h4>Bocchi the Rock! Vol. 8</h4>
+                        </div>
+                        <p class="popover-desc">Kessoku Band avanza en el circuito de conciertos en vivo, afrontando nuevos retos musicales y cómicas situaciones juveniles.</p>
                     </div>
                 </article>
             </div>
@@ -487,9 +667,12 @@
             <div class="footer-col">
                 <h4>Contacto</h4>
                 <p>📍 Av. Principal #123, Lima - Perú</p>
-                <p>📞 (+51) 987 654 321</p>
+                <p>📞 +51 904 195 096</p>
                 <p>✉️ ventas@utilex.pe</p>
                 <p>⏰ Lun - Sáb: 8:30 am - 8:00 pm</p>
+                <a href="https://wa.me/51904195096?text=%C2%A1Hola%20UtiLex!%20Deseo%20consultar%20sobre%20sus%20productos%20y%20cat%C3%A1logo." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                    💬 Escríbenos por WhatsApp
+                </a>
             </div>
         </div>
 
@@ -499,5 +682,6 @@
             </div>
         </div>
     </footer>
+    <script src="../js/carrito.js"></script>
 </body>
 </html>

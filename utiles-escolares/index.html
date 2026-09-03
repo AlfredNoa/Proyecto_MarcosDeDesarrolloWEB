@@ -15,12 +15,48 @@
                         <img src="../Media/Utilex_logo.png" alt="Utilex - Inicio" width="74" height="85">
                     </a> 
                 </div>
-                <ul class="lista-nav">
-                    <li class="nav-links"><a href="../pagina-principal/index.html">Inicio</a></li>
-                    <li class="nav-links"><a href="../libros/index.html">Libros</a></li>
-                    <li class="nav-links"><a href="./index.html" class="active">Útiles Escolares</a></li>
-                    <li class="nav-links"><a href="../ofertas/index.html">Ofertas</a></li>
-                </ul>
+                <div class="nav-menu-wrapper">
+                    <ul class="lista-nav">
+                        <li class="nav-links"><a href="../pagina-principal/index.html">Inicio</a></li>
+                        <li class="nav-links"><a href="../libros/index.html">Libros</a></li>
+                        <li class="nav-links"><a href="./index.html" class="active">Útiles Escolares</a></li>
+                        <li class="nav-links"><a href="../ofertas/index.html">Ofertas</a></li>
+                    </ul>
+                    <div class="cart-container">
+                        <button type="button" class="btn-cart-toggle" id="btnCartToggle" aria-label="Ver carrito de compras" title="Carrito de compras">
+                            <span class="cart-icon">🛒</span>
+                            <span class="cart-badge" id="cartCount" style="display: none;">0</span>
+                        </button>
+                        <div class="cart-dropdown" id="cartDropdown">
+                            <div class="cart-banner-msg" id="cartBannerMsg" style="display: none;">
+                                <span>✓</span> <span id="cartBannerText">Producto agregado</span>
+                            </div>
+                            <div class="cart-dropdown-header">
+                                <div class="cart-items-count">
+                                    <span>Items: <strong id="cartHeaderCount">0</strong></span>
+                                </div>
+                                <button type="button" class="btn-clear-cart" id="btnClearCart" title="Vaciar carrito" style="display: none;">
+                                    🗑️ Borrar todos
+                                </button>
+                                <button type="button" class="btn-close-cart" id="btnCloseCart" title="Cerrar">✕</button>
+                            </div>
+                            <div class="cart-items-list" id="cartItemsList">
+                                <!-- Productos dinámicos -->
+                            </div>
+                            <div class="cart-dropdown-footer" id="cartDropdownFooter" style="display: none;">
+                                <div class="cart-subtotal-row">
+                                    <span class="subtotal-label">Subtotal</span>
+                                    <span class="subtotal-amount" id="cartSubtotal">S/ 0,00</span>
+                                </div>
+                                <p class="cart-tax-notice">Los descuentos se aplicarán en el carrito</p>
+                                <div class="cart-action-buttons">
+                                    <button type="button" class="btn-cart-secondary" id="btnKeepShopping">Seguir Comprando</button>
+                                    <button type="button" class="btn-cart-primary" id="btnCheckout">Finalizar Compra</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
@@ -135,9 +171,12 @@
             <div class="footer-col">
                 <h4>Contacto</h4>
                 <p>📍 Av. Principal #123, Lima - Perú</p>
-                <p>📞 (+51) 987 654 321</p>
+                <p>📞 +51 904 195 096</p>
                 <p>✉️ ventas@utilex.pe</p>
                 <p>⏰ Lun - Sáb: 8:30 am - 8:00 pm</p>
+                <a href="https://wa.me/51904195096?text=%C2%A1Hola%20UtiLex!%20Deseo%20consultar%20sobre%20sus%20productos%20y%20cat%C3%A1logo." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                    💬 Escríbenos por WhatsApp
+                </a>
             </div>
         </div>
 
@@ -147,5 +186,6 @@
             </div>
         </div>
     </footer>
+    <script src="../js/carrito.js"></script>
 </body>
 </html>
