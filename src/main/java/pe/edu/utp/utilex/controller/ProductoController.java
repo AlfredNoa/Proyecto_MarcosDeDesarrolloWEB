@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import lombok.RequiredArgsConstructor;
+import pe.edu.utp.utilex.exception.RecursoNoEncontradoException;
 import pe.edu.utp.utilex.model.Libro;
 import pe.edu.utp.utilex.model.Producto;
 import pe.edu.utp.utilex.model.UtilEscolar;
@@ -13,7 +14,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/productos")
-@CrossOrigin(origins = "*")
 @RequiredArgsConstructor
 
 public class ProductoController {
@@ -44,8 +44,8 @@ public class ProductoController {
     // Endpoint: GET /api/productos/1 (buscar por ID)
     @GetMapping("/{id}")
     public ResponseEntity<Producto> obtenerPorId(@PathVariable Long id) {
-        return productoService.buscarPorId(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+        Producto producto = productoService.buscarPorId(id)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Producto", id));
+        return ResponseEntity.ok(producto);        
     }
 }

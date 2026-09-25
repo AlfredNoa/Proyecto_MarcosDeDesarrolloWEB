@@ -10,6 +10,12 @@ function cargarLibros() {
             const gridAventura = document.getElementById('grid-aventura');
             const gridManga = document.getElementById('grid-manga');
 
+            // 1. VACIAR los contenedores antes de pintar de nuevo
+            if (gridFantasia) gridFantasia.innerHTML = '';
+            if (gridAventura) gridAventura.innerHTML = '';
+            if (gridManga) gridManga.innerHTML = '';
+
+            // 2. Pintar las tarjetas actualizadas
             libros.forEach(libro => {
                 const tarjetaHTML = crearTarjetaLibro(libro);
 
