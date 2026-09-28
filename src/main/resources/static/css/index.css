@@ -1,0 +1,11 @@
+/* ==========================================================================
+   UTILEX - ESTILOS EXCLUSIVOS DE LA PÁGINA PRINCIPAL (index.css)
+   Sección: Precios Especiales y Ofertas
+   ========================================================================== */
+
+.seccion-ofertas {
+  background: linear-gradient(180deg, #fff7ed 0%, #fff 100%);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid #fed7aa;
+}
